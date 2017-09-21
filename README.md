@@ -1,7 +1,7 @@
 # LinuxTips
 A place to store lots of Tips and Tricks in Linux
 
-#Super fast searching with silver searcher (ag)
+```#Super fast searching with silver searcher (ag)
 for i in `cat list.txt`; do ag -w $i results.txt >> out.txt; done
 
 #grep with color
@@ -112,6 +112,6 @@ cut -f1-2 sample.fa.fai
 
 #for a bunch of paths to .vcf files, make symlinks to them and extract the lenaID for naming
 for i in `cat vcf.dir`; do ln -s $i `awk 'END{ var=FILENAME; split (var,a,/\//); print a[8]}' $i`; done
-
+```
 
 
