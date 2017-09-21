@@ -1,7 +1,8 @@
 # LinuxTips
 A place to store lots of Tips and Tricks in Linux
 
-```#Super fast searching with silver searcher (ag)
+```
+#Super fast searching with silver searcher (ag)
 for i in `cat list.txt`; do ag -w $i results.txt >> out.txt; done
 
 #grep with color
