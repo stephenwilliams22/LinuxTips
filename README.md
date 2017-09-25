@@ -113,6 +113,9 @@ cut -f1-2 sample.fa.fai
 
 #for a bunch of paths to .vcf files, make symlinks to them and extract the lenaID for naming
 for i in `cat vcf.dir`; do ln -s $i `awk 'END{ var=FILENAME; split (var,a,/\//); print a[8]}' $i`; done
+
+#upload a file to an ftp server via curl (will be useful for SRA uploads)
+nohup curl -T my_file.txt ftp://ftp.place.to.go --user username:password &
 ```
 
 
