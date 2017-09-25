@@ -116,6 +116,9 @@ for i in `cat vcf.dir`; do ln -s $i `awk 'END{ var=FILENAME; split (var,a,/\//);
 
 #upload a file to an ftp server via curl (will be useful for SRA uploads)
 nohup curl -T my_file.txt ftp://ftp.place.to.go --user username:password &
+
+#replace characters with sed. replce foo with bar
+sed -i 's/foo/bar/g' *txt
 ```
 
 
