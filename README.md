@@ -111,8 +111,9 @@ samtools faidx sample.fa
 cut -f1-2 sample.fa.fai
 
 
-#for a bunch of paths to .vcf files, make symlinks to them and extract the lenaID for naming
-for i in `cat vcf.dir`; do ln -s $i `awk 'END{ var="'$i'"; split (var,a,/\//); print a[8]}' /dev/null`; done
+#for a bunch of paths to .bam and .bai files, make symlinks to them and extract the lenaID for naming
+for i in `cat bams.dir`; do ln -s $i `awk 'END{ var="'$i'"; split (var,a,/\//); print a[8]}' /dev/null`.bam; done
+for i in `cat bais.dir`; do ln -s $i `awk 'END{ var="'$i'"; split (var,a,/\//); print a[8]}' /dev/null`.bai; done
 
 #upload a file to an ftp server via curl (will be useful for SRA uploads)
 nohup curl -T my_file.txt ftp://ftp.place.to.go --user username:password &
