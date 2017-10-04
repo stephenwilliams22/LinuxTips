@@ -124,6 +124,9 @@ sed -i 's/foo/bar/g' *txt
 #Find vcfs and cound the number of variants in parallel
 find *vcf | parallel 'echo {};cat {} | grep -v "#" | wc -l'
 
+#modified to cound the number of reads in a file (seems very fast)
+find read-RA_si-GGTAACGC_lane-001-chunk-001.fastq.gz | parallel 'echo {};zcat {} | wc -l'
+
 ```
 
 
