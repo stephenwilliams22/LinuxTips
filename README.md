@@ -120,6 +120,10 @@ nohup curl -T my_file.txt ftp://ftp.place.to.go --user username:password &
 
 #replace characters with sed. replce foo with bar
 sed -i 's/foo/bar/g' *txt
+
+#Find vcfs and cound the number of variants in parallel
+find *vcf | parallel 'echo {};cat {} | grep -v "#" | wc -l'
+
 ```
 
 
