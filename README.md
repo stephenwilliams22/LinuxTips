@@ -127,6 +127,14 @@ find *vcf | parallel 'echo {};cat {} | grep -v "#" | wc -l'
 #modified to cound the number of reads in a file (seems very fast)
 find read-RA_si-GGTAACGC_lane-001-chunk-001.fastq.gz | parallel 'echo {};zcat {} | wc -l'
 
+#start a bunch of qsub jobs at once by making a shell script
+ #file structure submit.qsub.sh
+ cd 45801 ; qsub < 45801.sh ; cd ..
+ cd 45802 ; qsub < 45802.sh ; cd ..
+ etc.
+ etc.
+./submit.qsub.sh
+
 ```
 
 
