@@ -135,6 +135,10 @@ find read-RA_si-GGTAACGC_lane-001-chunk-001.fastq.gz | parallel 'echo {};zcat {}
  etc.
 ./submit.qsub.sh
 
+#switch between different longranger dpe
+cd longranger
+git checkout master (or whatever maybe wei/LONGRANGER-1759)
+
 ```
 
 
