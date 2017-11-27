@@ -142,6 +142,10 @@ find read-RA_si-GGTAACGC_lane-001-chunk-001.fastq.gz | parallel 'echo {};zcat {}
 cd longranger
 git checkout master (or whatever maybe wei/LONGRANGER-1759)
 
+#delete a queued job on hydra
+cd /mnt/hydra/hydra/spool/pending
+rm YOURJOBNUMBER
+
 ```
 
 
