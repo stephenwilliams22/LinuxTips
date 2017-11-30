@@ -121,6 +121,9 @@ nohup curl -T my_file.txt ftp://ftp.place.to.go --user username:password &
 #replace characters with sed. replce foo with bar
 sed -i 's/foo/bar/g' *txt
 
+#convert whitespace to return.
+sed -i 's/\s\+/\n/g' file.txt
+
 #replace characters with sed when there are backslashes such as in file paths
 sed -i 's#HipSTR#HipSTR/DBS_TS#g' make_plots.sh
 
