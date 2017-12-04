@@ -149,6 +149,9 @@ git checkout master (or whatever maybe wei/LONGRANGER-1759)
 cd /mnt/hydra/hydra/spool/pending
 rm YOURJOBNUMBER
 
+#find .tsv files in all directories excluding ones that end with del and copy them to another directory
+find ./45* -type f -name "*.tsv" ! -path "./*.del/*" -exec cp {} /mnt/home/stephen/public_html/Heidi/MacRehm_new \;
+
 ```
 
 
