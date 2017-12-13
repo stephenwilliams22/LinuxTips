@@ -118,6 +118,18 @@ for i in `cat bais.dir`; do ln -s $i `awk 'END{ var="'$i'"; split (var,a,/\//); 
 #upload a file to an ftp server via curl (will be useful for SRA uploads)
 nohup curl -T my_file.txt ftp://ftp.place.to.go --user username:password &
 
+#put command in sftp bash script. cd into the correct dir of the sftp server then put stuff there (recursive)
+nano put.sh
+      #!/bin/bash
+      export SSHPASS=PassWord
+      sshpass -e sftp -P 2200 'stephen.williams@10xgenomics.com'@bioshare.bioinformatics.ucdavis.edu << !
+      cd s0ryf7dj2tr4tef/
+      put -r /mnt/home/stephen/yard/chili_SN2.0_BUSCO3
+      bye
+      !
+nohup ./put.sh &o
+
+
 #replace characters with sed. replce foo with bar
 sed -i 's/foo/bar/g' *txt
 
