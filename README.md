@@ -164,6 +164,9 @@ rm YOURJOBNUMBER
 #find .tsv files in all directories excluding ones that end with del and copy them to another directory
 find ./45* -type f -name "*.tsv" ! -path "./*.del/*" -exec cp {} /mnt/home/stephen/public_html/Heidi/MacRehm_new \;
 
+#pretty .bam/.sam files
+prettysam -r hg19-2.2.0/fasta/genome.fa phased_possorted_bam.bam
+
 ```
 
 
