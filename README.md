@@ -167,6 +167,9 @@ find ./45* -type f -name "*.tsv" ! -path "./*.del/*" -exec cp {} /mnt/home/steph
 #pretty .bam/.sam files
 prettysam -r hg19-2.2.0/fasta/genome.fa phased_possorted_bam.bam
 
+#delete all the files in a directory except an *.sh file for a list of directories
+for i in `cat dirs.txt`; do cd $i; rm -- !($i.sh); cd ..;  done
+
 ```
 
 
