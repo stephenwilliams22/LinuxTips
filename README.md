@@ -171,6 +171,9 @@ prettysam -r hg19-2.2.0/fasta/genome.fa phased_possorted_bam.bam
 shopt -s extglob 
 for i in `cat dirs.txt`; do cd $i; rm -- !($i.sh); cd ..;  done
 
+#remove spaces from a file but keep tabs (nice if you coppied sample info off LENA)
+sed 's/ \+//g' file
+
 ```
 
 
