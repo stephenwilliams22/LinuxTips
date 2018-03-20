@@ -174,6 +174,10 @@ for i in `cat dirs.txt`; do cd $i; rm -- !($i.sh); cd ..;  done
 #remove spaces from a file but keep tabs (nice if you coppied sample info off LENA)
 sed 's/ \+//g' file
 
+# use awk to "grep" for something and print the second field
+
+generate data | awk '/something/ {print $2}' 
+
 ```
 
 
