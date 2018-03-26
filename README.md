@@ -177,6 +177,9 @@ sed 's/ \+//g' file
 # use awk to "grep" for something and print the second field
 generate data | awk '/something/ {print $2}' 
 
+# Ultra fast find things such as cell barcodes with ripgrep
+sambamba view -t 5 possorted_genome_bam.bam | rg -j 5 --no-line-number -F -f test_bc.txt > test.rg.sam
+
 ```
 
 
