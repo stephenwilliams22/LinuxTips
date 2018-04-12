@@ -180,6 +180,9 @@ generate data | awk '/something/ {print $2}'
 # Ultra fast find things such as cell barcodes with ripgrep
 sambamba view -t 5 possorted_genome_bam.bam | rg -j 5 --no-line-number -F -f test_bc.txt > test.rg.sam
 
+# A tidy way to look at a vcf
+zcat output.gvcf.gz|  tail -n +285 | column -t
+
 ```
 
 
