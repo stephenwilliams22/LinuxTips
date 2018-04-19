@@ -183,6 +183,10 @@ sambamba view -t 5 possorted_genome_bam.bam | rg -j 5 --no-line-number -F -f tes
 # A tidy way to look at a vcf
 zcat output.gvcf.gz|  tail -n +285 | column -t
 
+# Add something to bash profile automatically 
+
+echo -e '\n#Your note\nexport PATH=/path/to/the/thing:$PATH' >> ~/.bash_profile
+
 ```
 
 
