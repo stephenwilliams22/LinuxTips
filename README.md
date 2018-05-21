@@ -187,6 +187,10 @@ zcat output.gvcf.gz|  tail -n +285 | column -t
 
 echo -e '\n#Your note\nexport PATH=/path/to/the/thing:$PATH' >> ~/.bash_profile
 
+# Send an email to yourself at the end of a bash script. Has subject "your script is done" and content "test"
+
+mail -s "your script is done" youremail@email.com <<< "test"
+
 ```
 
 
