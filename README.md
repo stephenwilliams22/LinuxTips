@@ -191,6 +191,9 @@ echo -e '\n#Your note\nexport PATH=/path/to/the/thing:$PATH' >> ~/.bash_profile
 
 mail -s "your script is done" youremail@email.com <<< "test"
 
+# run R script on cluster
+/mnt/opt/R/R-3.4.3/bin/Rscript --vanilla /path/to/R_code.R
+
 ```
 
 
