@@ -115,6 +115,9 @@ cut -f1-2 sample.fa.fai
 for i in `cat bams.dir`; do ln -s $i `awk 'END{ var="'$i'"; split (var,a,/\//); print a[8]}' /dev/null`.bam; done
 for i in `cat bais.dir`; do ln -s $i `awk 'END{ var="'$i'"; split (var,a,/\//); print a[8]}' /dev/null`.bai; done
 
+# for a bunch of leana ids create symlinks
+for i in {48868..48914}; do ln -s `find_marsoc_paths.py $i`/outs/phased_variants.vcf.gz.tbi ./$i.vcf.gz.tbi; done
+
 #upload a file to an ftp server via curl (will be useful for SRA uploads)
 nohup curl -T my_file.txt ftp://ftp.place.to.go --user username:password &
 
