@@ -197,6 +197,10 @@ mail -s "your script is done" youremail@email.com <<< "test"
 # run R script on cluster
 /mnt/opt/R/R-3.4.3/bin/Rscript --vanilla /path/to/R_code.R
 
+# recursive remove all files except ones that end in *.sh
+
+find . ! -name '*.sh' -type f -exec rm -f {} +
+
 ```
 
 
