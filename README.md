@@ -201,6 +201,11 @@ mail -s "your script is done" youremail@email.com <<< "test"
 
 find . ! -name '*.sh' -type f -exec rm -f {} +
 
+# split a VCF by chromosome no filters
+
+printf "chr1\nchr2\nchr3\nchr4\nchr5\nchr6\nchr7\nchr8\nchr9\nchr10\nchr11\nchr12\nchr13\nchr14\nchr15\nchr16\nchr17\nchr18\nchr19\nchr20\nchr21\nchr22\nchrX\nchrY\n" | xargs -n1 -P4 -I {} vcftools --gzvcf  51702.vcf.gz --chr {} --recode-INFO-all --out largevcf.{}
+
+# split a VCF by chromosome with filters
+
+printf "chr1\nchr2\nchr3\nchr4\nchr5\nchr6\nchr7\nchr8\nchr9\nchr10\nchr11\nchr12\nchr13\nchr14\nchr15\nchr16\nchr17\nchr18\nchr19\nchr20\nchr21\nchr22\nchrX\nchrY\n" | xargs -n1 -P4 -I {} vcftools --gzvcf  51702.vcf.gz --chr {} --recode --recode-INFO-all --out largevcf.{}
 ```
-
-
