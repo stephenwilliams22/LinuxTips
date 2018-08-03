@@ -195,6 +195,11 @@ echo -e '\n#Your note\nexport PATH=/path/to/the/thing:$PATH' >> ~/.bash_profile
 mail -s "your script is done" youremail@email.com <<< "test"
 
 # run R script on cluster
+need this at the begining of your R_code.R
+
+`#!/usr/bin/env Rscript`
+`.libPaths(new = "/mnt/home/stephen/R/x86_64-pc-linux-gnu-library/3.4")`
+
 /mnt/opt/R/R-3.4.3/bin/Rscript --vanilla /path/to/R_code.R
 
 # recursive remove all files except ones that end in *.sh
