@@ -215,4 +215,9 @@ printf "chr1\nchr2\nchr3\nchr4\nchr5\nchr6\nchr7\nchr8\nchr9\nchr10\nchr11\nchr1
 # Find files fast with RipGrep
 
 rg "README.md" --files -j 30
+
+# Parse GTF to just get gene names
+
+ awk -F "\t" '$3 == "gene" { print $9 }' genes.gtf | awk -F ";" '{ print $3}' | awk -F " " ' {print $2}' | sed 's/"//g' | head
 ```
+
