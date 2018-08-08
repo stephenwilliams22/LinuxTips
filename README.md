@@ -218,6 +218,10 @@ rg "README.md" --files -j 30
 
 # Parse GTF to just get gene names
 
- awk -F "\t" '$3 == "gene" { print $9 }' genes.gtf | awk -F ";" '{ print $3}' | awk -F " " ' {print $2}' | sed 's/"//g' | head
+awk -F "\t" '$3 == "gene" { print $9 }' genes.gtf | awk -F ";" '{ print $3}' | awk -F " " ' {print $2}' | sed 's/"//g' | head
+
+    Same thing as above but get Ensembl gene names
+    
+awk -F "\t" '$3 == "gene" { print $9 }' genes.gtf | awk -F ";" '{ print $1}' | awk -F " " ' {print $2}' | sed 's/"//g' | head
 ```
 
