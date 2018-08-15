@@ -223,5 +223,10 @@ awk -F "\t" '$3 == "gene" { print $9 }' genes.gtf | awk -F ";" '{ print $3}' | a
     Same thing as above but get Ensembl gene names
     
 awk -F "\t" '$3 == "gene" { print $9 }' genes.gtf | awk -F ";" '{ print $1}' | awk -F " " ' {print $2}' | sed 's/"//g' | head
+
+# Print allele frequencies > 0.5
+
+vawk '{print I$AF}'  82956.vcf | awk '$1 > 0.5 { print;}' | head
+
 ```
 
