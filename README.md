@@ -228,5 +228,8 @@ awk -F "\t" '$3 == "gene" { print $9 }' genes.gtf | awk -F ";" '{ print $1}' | a
 
 vawk '{print I$AF}'  82956.vcf | awk '$1 > 0.5 { print;}' | head
 
-```
+# Print a new properly formated VCF with allele freq > 0.4
 
+vawk --header '{ if (I$AF>0.4) print $0 }' 82956.vcf | less
+
+```
