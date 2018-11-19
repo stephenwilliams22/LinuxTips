@@ -31,6 +31,8 @@ for i in `cat dirlist`; do samtools depth $i | awk -v f="$i" 'BEGIN{split(f,fs,"
 #download without verbose wget. the nohup output can get pretty big. 
 nohup wget --no-verbose  https://….. &
 
+# Download a list of files
+xargs -L 1 curl -O -L < files.txt
 
 #delete everything before ‘>SL3.0ch01’ and write to file. Want to delete chr00 in the original file
 sed -ne '/>SL3.0ch01/,$ p' Ref_S_lycopersicum_chromosomes.3.00.fa > Ref_S_lycopersicum_chromosomes.3.00.1-12.fa
