@@ -234,4 +234,7 @@ vawk '{print I$AF}'  82956.vcf | awk '$1 > 0.5 { print;}' | head
 
 vawk --header '{ if (I$AF>0.4) print $0 }' 82956.vcf | less
 
+# Super fast sorting
+
+LC_ALL=C sort --parallel=8 file.txt > file_sorted.txt
 ```
