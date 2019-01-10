@@ -120,6 +120,9 @@ for i in `cat bais.dir`; do ln -s $i `awk 'END{ var="'$i'"; split (var,a,/\//); 
 # for a bunch of leana ids create symlinks
 for i in {48868..48914}; do ln -s `find_marsoc_paths.py $i`/outs/phased_variants.vcf.gz.tbi ./$i.vcf.gz.tbi; done
 
+# for a bunch of lena ids creat symlinks inside a directory
+for i in `seq 99039 99059`; do ln -s `find_marsoc_paths.py $i`/outs/possorted_genome_bam.bam $i/possorted_genome_bam.bam; done
+
 #upload a file to an ftp server via curl (will be useful for SRA uploads)
 nohup curl -T my_file.txt ftp://ftp.place.to.go --user username:password &
 
