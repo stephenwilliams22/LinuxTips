@@ -104,11 +104,11 @@ Rscript -e ‘your R script’
 column -t 13846.hla.bubbles.pls.scores.out | head
 
 
-#extract a specific part of a fast. can put regions in too like chr2:1:2000
+#extract a specific part of a fasta. can put regions in too like chr2:1:2000
 samtools faidx human_genome.fa
 samtools faidx human_genome.fa chr1
 
-#get lengths of a record in a fast
+#get lengths of a record in a fasta
 samtools faidx sample.fa 
 cut -f1-2 sample.fa.fai
 
