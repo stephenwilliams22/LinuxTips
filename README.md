@@ -229,6 +229,10 @@ awk -F "\t" '$3 == "gene" { print $9 }' genes.gtf | awk -F ";" '{ print $3}' | a
     
 awk -F "\t" '$3 == "gene" { print $9 }' genes.gtf | awk -F ";" '{ print $1}' | awk -F " " ' {print $2}' | sed 's/"//g' | head
 
+# Sort and bgzip GTF
+
+(grep ^"#" genes.gtf; grep -v ^"#" genes.gtf | sort -k1,1 -k4,4n) | bgzip  > genes.sorted.gtf.gz
+
 # Print allele frequencies > 0.5
 
 vawk '{print I$AF}'  82956.vcf | awk '$1 > 0.5 { print;}' | head
