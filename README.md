@@ -244,10 +244,9 @@ vawk --header '{ if (I$AF>0.4) print $0 }' 82956.vcf | less
 # Super fast sorting
 
 LC_ALL=C sort --parallel=8 file.txt > file_sorted.txt
-```
+
 
 # Remove color codes from files
 
-```
 sed -i 's/\x1b\[[0-9;]*m//g' file.txt
 ```
