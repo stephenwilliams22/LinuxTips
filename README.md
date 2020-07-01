@@ -249,4 +249,8 @@ LC_ALL=C sort --parallel=8 file.txt > file_sorted.txt
 # Remove color codes from files
 
 sed -i 's/\x1b\[[0-9;]*m//g' file.txt
+
+# Fast tar.gz with pigz and progress bar
+
+tar cf - *.tif |pv -s $(du -sb ./ | cut -f1)| pigz -9 -p 32 > bigthing.tar.gz
 ```
