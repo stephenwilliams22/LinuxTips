@@ -253,4 +253,8 @@ sed -i 's/\x1b\[[0-9;]*m//g' file.txt
 # Fast tar.gz with pigz and progress bar
 
 tar cf - *.tif |pv -s $(du -sb ./ | cut -f1)| pigz -9 -p 32 > bigthing.tar.gz
+
+# Resize all *.tif using image magick and parallel
+
+parallel convert {} -resize 600 ... 600_{} ::: *.tif
 ```
