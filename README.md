@@ -256,5 +256,5 @@ tar cf - *.tif |pv -s $(du -sb ./ | cut -f1)| pigz -9 -p 32 > bigthing.tar.gz
 
 # Resize all *.tif using image magick and parallel
 
-parallel convert {} -resize 600 ... 600_{} ::: *.tif
+parallel -j YOUR THREADS convert {} -resize 600! 600_{} ::: *.tif
 ```
